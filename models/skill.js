@@ -1,8 +1,8 @@
 const skills = [
-    {id: 111, skill: 'HTML', learned: true},
-    {id: 112, skill: 'CSS ', learned: true},
-    {id: 113, skill: 'Javascript', learned: true},
-    {id: 114, skill: 'Python', learned: false},
+    {id: 101, skill: 'HTML', learned: true},
+    {id: 102, skill: 'CSS ', learned: true},
+    {id: 103, skill: 'Javascript', learned: true},
+    {id: 104, skill: 'Python', learned: false},
 ];
 
 module.exports = {
@@ -32,7 +32,7 @@ function deleteOne(id) {
     skills.splice(skillIdx, 1);
 }
 
-function updateOne(id) {
-    
-
+function updateOne(id, newSkill) {
+    const skillIdx = skills.findIndex(skill => skill.id == id);
+    skills[skillIdx].skill = newSkill;
 }

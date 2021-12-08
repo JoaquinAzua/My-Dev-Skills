@@ -8,6 +8,7 @@ module.exports = {
     create,
     delete: deleteSkill,
     update: updateSkill,
+    edit,
 };
 
 
@@ -44,9 +45,14 @@ function deleteSkill(req, res) {
     res.redirect('/skills');
 }
 
-function updateSkill(req, res) {
+function edit(req, res) {
+    let skill = Skill.getOne(req.params.id);
+    res.render('skills/edit', {skill});
+}
 
-    
-    // After updating data respond with a redirect 
-    //res.redirect('/skills/edit');
+function updateSkill(req, res) {
+    // invokes the updateone function by requesting id to change skill in skills array
+    Skill.updateOne(req.params.id, req.body.skill);
+    //After updating data respond with a redirect 
+    res.redirect('/skills');
 }

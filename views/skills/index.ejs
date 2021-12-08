@@ -5,23 +5,23 @@
     <thead>
       <tr>
         <th>Item</th>
-        <th>Completed?</th>
+        <th>Studied?</th>
       </tr>
     </thead>
     <tbody>
       <% skills.forEach(function(s) { %>
         <tr>
-          <td><a href="/skills/<%= s.id %>">
+          <td class="item"><a href="/skills/<%= s.id %>">
               <%= s.skill %>
             </a></td>
-          <td><%= s.learned ? 'learned' : 'not learned' %></td>
+          <td><%= s.learned ? 'Yes' : 'No' %></td>
           <td>
             <form action="/skills/<%= s.id %>?_method=DELETE" method="POST">
             <button type="submit" class="btn btn-danger">X</button>
             </form>
           </td>
           <td>
-            <form action="/skills/<%= s.id %>?_method=UPDATE" method="PUT">
+            <form action="/skills/<%= s.id %>/edit" method="GET">
             <button type="submit" class="btn btn-danger">Edit</button>
             </form>
           </td>

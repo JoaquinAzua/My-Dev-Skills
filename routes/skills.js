@@ -13,6 +13,9 @@ router.get('/new', skillsCtrl.new);
 // GET "/skills:id" - Show Route
 router.get('/:id', skillsCtrl.show);
 
+//GET "/skills:id/edit" get Edit route
+router.get('/:id/edit', skillsCtrl.edit )
+
 // POST "/skills" - Create Route
 router.post('/', skillsCtrl.create);
 
